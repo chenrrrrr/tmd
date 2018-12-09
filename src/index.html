@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <title>无标题文档</title>
+  <link href='./static/css/index.css' rel='stylesheet' type='text/css' />
+  <link href='./static/css/prism.css' rel='stylesheet' type='text/css' />
+  <link href='./static/css/marked.css' rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+  <div id="container">
+    <!-- 源 -->
+    <textarea id="src"></textarea>
+    <!-- 渲染后 -->
+    <div id="build"></div>
+    <!-- 状态栏 -->
+    <div class="foot">
+      <label id='wordsCount'>loadind...</label>
+      <label id="tips"></label>
+      <span id="toolbar">
+        <a id="screen" class="screen">1|1</a>
+      </span>
+    </div>
+  </div>
+</body>
+<script src="./static/js/htmlTextAreaElementExtend.js"></script>
+<script src="./static/js/prism.js"></script>
+<script src="./renderer/ipcRenderer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script>
+  var tabIndent = 2;
+  var srcDom = document.querySelector("#src");
+  var buildDom = document.querySelector("#build");
+
+  // 监听tab空格
+  srcDom.onkeydown = function (e) {
+    if (e.keyCode === 9) {
+      var newCaretPosition;
+      newCaretPosition = srcDom.getCaretPosition() + srcDom.setTabIndex(tabIndent).length;
+      srcDom.value = srcDom.value.substring(0, srcDom.getCaretPosition()) + srcDom.setTabIndex(tabIndent) + srcDom.value.substring(srcDom.getCaretPosition(), srcDom.value.length);
+      srcDom.setCaretPosition(newCaretPosition);
+      return false;
+    }
+  }
+
+  // 字数统计
+  function countWords() {
+    setTimeout(function () {
+      document.querySelector("#wordsCount").innerHTML = '已撰写' + srcDom.value.replace(/\s/g, '').length + '字';
+      countWords();
+    }, 1000);
+  }
+  countWords();
+</script>
+
+</html>

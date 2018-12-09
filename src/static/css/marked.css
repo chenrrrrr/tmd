@@ -1,0 +1,119 @@
+*{
+  font-family: Consolas, Monaco, 'Microsoft YaHei', 'Ubuntu Mono', monospace;
+}
+
+#build > *{
+  box-sizing: border-box;
+}
+
+#build > blockquote{
+    border-left: 4px solid #42b983;
+    color: #858585;
+    margin: 2em 0;
+    padding-left: 20px;
+}
+
+#build blockquote p{
+  line-height: 1.6rem;
+}
+
+
+#build p{
+  margin: 1em 0;
+  color: #34495e;
+}
+
+#build p,#build ul{
+  line-height: 1.6rem;
+  word-spacing: .05rem;
+}
+
+#build ul{
+  padding-left: 1.5rem;
+}
+
+/* code */
+#build pre[class*="language-"],#build p code{
+  background-color: #f8f8f8;
+}
+
+#build p code{
+  border-radius: 2px;
+  color: #e96900;
+  font-size: .8rem;
+  margin: 0 2px;
+  padding: 3px 5px;
+  white-space: pre-wrap;
+}
+
+/* h1,h2,h3,h4,h5,h6 */
+
+#build h1,h2,h3,h4,h5,h6{
+  color: #2c3e50;
+}
+#build h1{
+  margin: 0 0 1rem;
+}
+
+#build h2{
+  margin: 45px 0 .8rem;
+}
+
+#build h3{
+  margin: 40px 0 .6rem;
+}
+
+#build h4{
+  margin:inherit;
+}
+
+#build h5{
+  margin:inherit;
+}
+
+#build h6{
+  margin:inherit;
+}
+
+/* hr */
+
+#build hr{
+  border: none;
+  border-bottom: 1px solid #eee;
+  margin: 1em 0;
+}
+
+/* table */
+
+#build table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    margin-bottom: 1rem;
+    overflow: auto;
+    width: 100%;
+}
+
+#build tr{
+  border-top: 1px solid #ccc;
+}
+
+#build th,#build td{
+  border: 1px solid #ddd;
+  padding: 6px 13px;
+}
+
+#build tr:nth-child(2n) {
+    background-color: #f8f8f8;
+}
+
+/* a */
+
+#build a{
+  color: #3194d0;
+  text-decoration: none;
+}
+
+#build a:hover{
+  text-decoration: underline;
+}
